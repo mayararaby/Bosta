@@ -10,6 +10,8 @@
 .trackingSection {
   display: flex;
   align-items: center;
+  position: relative;
+
 }
 
 .arrowSvg{
@@ -28,12 +30,11 @@
   margin-inline: 0px;
 }
 
-label:hover{
+label:hover,
+.borderShadow{
   border: 1px solid #0000001a;
-  /* border-color: #0000001a; */
   border-bottom-color: transparent;
   border-radius: 10px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-
 }

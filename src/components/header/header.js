@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from '../../assetes/bostaLogo.png'
 import './header.css'
 import { LeftArrow } from '../../assetes/headerArrows'
+import { TrackingSearch } from '../trackingSearch/trackingSearch'
+
 export const Header = () => {
+  const [showComponent, setShowComponent] = useState(false)
+  const showTrackingComponent = () => setShowComponent(!showComponent)
+
   return (
     <>
 
@@ -27,10 +32,14 @@ export const Header = () => {
         </div>
 
         <div className='lastSection headerTxtSection'>
-          <label className='trackingSection'>
-            <span className='redTextColor tracking-text'>
-              تتبع شحنتك</span>
+          <label className={`trackingSection ${showComponent&&'borderShadow'}`}>
+            <span className='redTextColor tracking-text' onClick={showTrackingComponent} >
+              تتبع شحنتك
+            </span>
             <LeftArrow />
+            {
+              showComponent && <TrackingSearch />
+            }
           </label>
           <label>تسجيل الدخول</label>
           <label className='redTextColor'>ENG</label>
