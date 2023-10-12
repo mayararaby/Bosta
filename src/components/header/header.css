@@ -1,0 +1,39 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 15px;
+}
+
+.trackingSection {
+  display: flex;
+  align-items: center;
+}
+
+.arrowSvg{
+  width: 20px;
+}
+
+.headerTxtSection {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+
+}
+
+.tracking-text{
+  margin-inline: 0px;
+}
+
+label:hover{
+  border: 1px solid #0000001a;
+  /* border-color: #0000001a; */
+  border-bottom-color: transparent;
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+
+}

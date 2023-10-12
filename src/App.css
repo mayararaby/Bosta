@@ -1,0 +1,17 @@
+.redTextColor{
+  color: #e30613;
+}
+
+.arabicDirection{
+  direction: rtl;
+  height: 98%;
+}
+
+.line{
+  border-bottom: 1px solid #dbd8d8;
+  width: 100%;
+}
+
+.imgLogo{
+  width: 150px;
+}
