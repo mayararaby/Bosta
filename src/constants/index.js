@@ -1,0 +1,1 @@
+export const trackingServiceUrl ='https://tracking.bosta.co/shipments/track/'
