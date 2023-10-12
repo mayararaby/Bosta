@@ -1,7 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import './trackingSearch.css'
 import { HeaderSearch } from "../../assetes/headerSearch"
 export const TrackingSearch = () => {
+  const [trackingNumber , setTrackingNumber] = useState("")
+  const handelTrackingNumber= (e)=>(setTrackingNumber(e.target.value))
+  console.log({trackingNumber})
   return (
     <>
       <div className="mainTrackingContainer">
@@ -9,7 +12,7 @@ export const TrackingSearch = () => {
           تتبع شحنتك
         </div>
         <div className="inputContainer">
-          <input className="trackingSearchInput trackingHorizontalMargin" type="text" placeholder="رقم التتبع" />
+          <input onChange={handelTrackingNumber} value={trackingNumber} className="trackingSearchInput trackingHorizontalMargin" type="text" placeholder="رقم التتبع" />
           <HeaderSearch />
         </div>
       </div>
