@@ -28,10 +28,20 @@
   align-content: center;
   justify-content: flex-start;
   align-items: flex-start;
+  margin-inline: 15px;
 }
 
 .stepsContainer{
   direction: ltr;
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+.detailsContainer{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  width: 90%;
+  margin: auto;
 }

@@ -5,9 +5,11 @@ import { _performDate } from '../../services'
 import { packageStatus, StatusColors } from '../../constants/index'
 import withLocalize from '../../hoc/withLocalize'
 import StepperComponent from '../stepper/stepper'
+import DetailsPackage from '../detailsPackage/detailsPackage'
+import DeliverDetails from '../deliverDetails/deliverDetails'
 const DetailsCard = ({ t }) => {
   const packageInfo = useSelector(state => state.packageInfo)
-  const { provider, TrackingNumber, CurrentStatus, PromisedDate ,TransitEvents} = packageInfo
+  const { provider, TrackingNumber, CurrentStatus, PromisedDate, TransitEvents } = packageInfo
   const { state, timestamp } = CurrentStatus
 
   return (
@@ -37,7 +39,9 @@ const DetailsCard = ({ t }) => {
 
 
       </div>
-      <div className='stepperContainer'>
+      <div className='detailsContainer'>
+        <DetailsPackage TransitEvents={TransitEvents} t={t} />
+        <DeliverDetails t={t} />
       </div>
     </>
   )

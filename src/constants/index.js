@@ -65,3 +65,29 @@ export const stepsIcons = {
     4:<DoneIcon />
   }
 }
+
+
+export const  columns = [
+  {
+    id: 'branch',
+    label: 'الفرع',
+    align: 'right',
+  },
+  {
+    id: 'date',
+    label: 'التاريخ',
+    align: 'right',
+  },
+  {
+    id: 'time',
+    label: 'الوقت',
+    minWidth: 170,
+    align: 'right',
+  },
+  {
+    id: 'details',
+    label: 'تفاصيل',
+    align: 'right',
+    verticalText: true,
+  },
+];

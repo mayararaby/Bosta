@@ -50,7 +50,8 @@ label:hover,
   
 }
 .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root,
-.css-1hv8oq8-MuiStepLabel-label.MuiStepLabel-alternativeLabel{
+.css-1hv8oq8-MuiStepLabel-label.MuiStepLabel-alternativeLabel,
+table{
   font-family: 'Cairo', sans-serif !important;
 
 }
