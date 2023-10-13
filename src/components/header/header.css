@@ -49,7 +49,8 @@ label:hover,
   font-family: 'Cairo', sans-serif !important;
   
 }
-.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root{
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root,
+.css-1hv8oq8-MuiStepLabel-label.MuiStepLabel-alternativeLabel{
   font-family: 'Cairo', sans-serif !important;
 
 }

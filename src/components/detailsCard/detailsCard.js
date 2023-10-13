@@ -2,12 +2,13 @@ import React from 'react'
 import './detailsCard.css'
 import { useSelector } from 'react-redux'
 import { _performDate } from '../../services'
-import {packageStatus, StatusColors} from '../../constants/index'
+import { packageStatus, StatusColors } from '../../constants/index'
 import withLocalize from '../../hoc/withLocalize'
-const DetailsCard = ({t}) => {
+import StepperComponent from '../stepper/stepper'
+const DetailsCard = ({ t }) => {
   const packageInfo = useSelector(state => state.packageInfo)
-  const {provider ,TrackingNumber,CurrentStatus, PromisedDate, CreateDate  } =packageInfo 
-  const {state , timestamp } =CurrentStatus
+  const { provider, TrackingNumber, CurrentStatus, PromisedDate ,TransitEvents} = packageInfo
+  const { state, timestamp } = CurrentStatus
 
   return (
     <>
@@ -31,11 +32,15 @@ const DetailsCard = ({t}) => {
             <div className='bold'>{_performDate(PromisedDate)}</div>
           </div>
         </div>
+        <StepperComponent TransitEvents={TransitEvents} t={t} />
+
         <div className='line'></div>
 
+      </div>
+      <div className='stepperContainer'>
       </div>
     </>
   )
 }
 
-export default withLocalize( DetailsCard)
+export default withLocalize(DetailsCard)

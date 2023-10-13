@@ -6,6 +6,12 @@
   height: auto;
   padding: 10px 0px 10px 0px;
 }
+.stepperContainer{
+  margin: 30px auto 30px auto;
+  width: 90%;
+  height: auto;
+  padding: 10px 0px 10px 0px;
+}
 
 .packageInfoContainer{
   display: flex;
@@ -22,4 +28,10 @@
   align-content: center;
   justify-content: flex-start;
   align-items: flex-start;
+}
+
+.stepsContainer{
+  direction: ltr;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
