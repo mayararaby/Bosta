@@ -1,26 +1,34 @@
 import React from 'react'
 import './detailsCard.css'
-const DetailsCard = () => {
+import { useSelector } from 'react-redux'
+import { _performDate } from '../../services'
+import {packageStatus, StatusColors} from '../../constants/index'
+import withLocalize from '../../hoc/withLocalize'
+const DetailsCard = ({t}) => {
+  const packageInfo = useSelector(state => state.packageInfo)
+  const {provider ,TrackingNumber,CurrentStatus, PromisedDate, CreateDate  } =packageInfo 
+  const {state , timestamp } =CurrentStatus
+
   return (
     <>
       <div className='detailsCardContainer'>
 
         <div className='packageInfoContainer'>
           <div className='packageSubInfoContainer'>
-            <div className='secondaryColor'>رقم الشحنه 1234</div>
-            <div className='bold'>لم يتم تسليم الشحنه</div>
+            <div className='secondaryColor'> {`${t('trackingNo')} - ${TrackingNumber}`}</div>
+            <div className={`bold ${StatusColors[state]}`}>{t(packageStatus[state])}</div>
           </div>
           <div className='packageSubInfoContainer'>
-            <div className='secondaryColor'>أخر تحديث</div>
-            <div className='bold'>الأثنين</div>
+            <div className='secondaryColor'>{t('lastUpdate')}</div>
+            <div className='bold'>{_performDate(timestamp)}</div>
           </div>
           <div className='packageSubInfoContainer'>
-            <div className='secondaryColor'>اسم التاجر</div>
-            <div className='bold'>amazon.com</div>
+            <div className='secondaryColor'>{t('seller')}</div>
+            <div className='bold'>{provider}</div>
           </div>
           <div className='packageSubInfoContainer'>
-            <div className='secondaryColor'>موعد التسليم خلال</div>
-            <div className='bold'>3 يناير</div>
+            <div className='secondaryColor'>{t('deliveredTime')}</div>
+            <div className='bold'>{_performDate(PromisedDate)}</div>
           </div>
         </div>
         <div className='line'></div>
@@ -30,4 +38,4 @@ const DetailsCard = () => {
   )
 }
 
-export default DetailsCard
+export default withLocalize( DetailsCard)

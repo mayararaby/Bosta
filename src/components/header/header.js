@@ -4,13 +4,10 @@ import './header.css'
 import { LeftArrow } from '../../assetes/headerArrows'
 import TrackingSearch from '../trackingSearch/trackingSearch'
 import LanguageMenu from '../languageMenu/languageMenu'
-import { useSelector } from 'react-redux'
 import withLocalize from '../../hoc/withLocalize'
 const Header = ({t}) => {
   const [showComponent, setShowComponent] = useState(false)
   const showTrackingComponent = () => setShowComponent(!showComponent)
-  // const packageInfo = useSelector(state => state.local)
-  // console.log("🚀 ~ file: header.js:13 ~ Header ~ packageInfo:", packageInfo)
 
 
   return (
@@ -48,7 +45,6 @@ const Header = ({t}) => {
           </label>
           <label>{t('login')}</label>
           <LanguageMenu />
-          {/* <label className='redTextColor'>ENG</label> */}
         </div>
 
       </div>

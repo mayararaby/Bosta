@@ -1,5 +1,13 @@
-.redTextColor{
+.redTextColor,
+.cancelledPackage{
   color: #e30613;
+}
+
+.deliveredPackage{
+  color: #339900
+}
+.returnPackage{
+  color:#ffcc00
 }
 
 .arabicDirection{
@@ -22,3 +30,4 @@
 .secondaryColor{
   color:#989797
 }
+

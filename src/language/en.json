@@ -7,5 +7,17 @@
   "ar":"AR",
   "en":"ENG",
   "trackYourShipment":"Track your shipment",
-  "trackingNo":"Tracking No."
+  "trackingNo":"Tracking No.",
+  "ticketCreated" : "Ticket created",
+  "packageReceived" : "Package Received",
+  "inTransit" :"In transit",
+  "outForDelivery":"Out for delivery",
+  "waitingForCustomerAction" :"Waiting for customer action",
+  "notYetShipped" : "Not yet shipped",
+  "deliveredToSender" : "Delivered to sender",
+  "delivered" :"Delivered",
+  "cancelled" :"Cancelled",
+  "deliveredTime" : "Delivery time within",
+  "seller":"Seller name",
+  "lastUpdate":"Last update"
 }

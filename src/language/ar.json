@@ -7,5 +7,17 @@
   "ar":"اللغة العربية",
   "en" : "اللغة الانجليزية",
   "trackYourShipment":"تتبع شحنتك",
-  "trackingNo":"رقم التتبع"
+  "trackingNo":"رقم التتبع",
+  "ticketCreated":"تم انشاء الشحنة",
+  "packageReceived":"تم استلام الشحنة",
+  "inTransit" : "تم استلام الشحنة من التاجر",
+  "outForDelivery": "الشحنة خرجت للتسليم",
+  "waitingForCustomerAction":"في انتظار تأكيد العميل",
+  "notYetShipped" :"لم يتم شحنه بعد ",
+  "deliveredToSender" : "لم يتم تسليم الشحنة",
+  "cancelled":"تم الغاء الشحنة",
+  "delivered" :  "تم تسليم الشحنة",
+  "deliveredTime" :"موعد التسليم خلال",
+  "seller" : "اسم التاجر",
+  "lastUpdate" : "أخر تحديث"
 }
