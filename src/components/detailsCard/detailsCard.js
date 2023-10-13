@@ -32,9 +32,9 @@ const DetailsCard = ({ t }) => {
             <div className='bold'>{_performDate(PromisedDate)}</div>
           </div>
         </div>
+        <div className='line'></div>
         <StepperComponent TransitEvents={TransitEvents} t={t} />
 
-        <div className='line'></div>
 
       </div>
       <div className='stepperContainer'>

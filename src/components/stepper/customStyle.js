@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { steps, stepsIcons, StatusColorsCode } from '../../constants/index';
 
 export const ColorlibConnector = styled(StepConnector)(({ theme ,activeStepperIndex }) => {
-  console.log(activeStepperIndex,",=6")
   return {
     [`&.${stepConnectorClasses.alternativeLabel}`]: {
       top: 22,
@@ -29,7 +28,7 @@ export const ColorlibConnector = styled(StepConnector)(({ theme ,activeStepperIn
   }
 });
 
-const ColorlibStepIconRoot = styled('div')(({ theme, ownerState,activeStepperIndex }) => {
+const ColorlibStepIconRoot = styled('div')(({ theme, ownerState }) => {
   return {
     backgroundColor: theme.palette.mode === 'dark' ? theme.palette.grey[700] : '#ccc',
     zIndex: 1,
@@ -41,22 +40,21 @@ const ColorlibStepIconRoot = styled('div')(({ theme, ownerState,activeStepperInd
     justifyContent: 'center',
     alignItems: 'center',
     ...(ownerState.active && {
-      backgroundColor: StatusColorsCode[steps[activeStepperIndex]]
+      backgroundColor: StatusColorsCode[steps[ownerState.activeStepperIndex]]
     }),
     ...(ownerState.completed && {
-      backgroundColor: StatusColorsCode[steps[activeStepperIndex]],
+      backgroundColor: StatusColorsCode[steps[ownerState.activeStepperIndex]],
     }),
   }
 });
 
 
 export const ColorlibStepIcon = (props,activeStepperIndex) => {
-  console.log({activeStepperIndex})
   const { active, completed, className } = props;
   const iconsObject =stepsIcons[activeStepperIndex]
 
   return (
-    <ColorlibStepIconRoot ownerState={{ completed, active,activeStepperIndex }} activeStepperIndexc={activeStepperIndex} className={className}>
+    <ColorlibStepIconRoot ownerState={{ completed, active,activeStepperIndex }} className={className}>
       {iconsObject[String(props.icon)]}
     </ColorlibStepIconRoot>
   );
