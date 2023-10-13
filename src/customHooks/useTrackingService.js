@@ -2,10 +2,8 @@ import { useEffect, useState } from "react"
 import axios from 'axios';
 import { trackingServiceUrl } from "../constants";
 import { setPackageInfo } from "../redux/actions";
-import { useDispatch } from "react-redux";
-export const useTrackingService = (initTrackingNumber) => {
+export const useTrackingService = ({initTrackingNumber, dispatch}) => {
   const [trackingNumber, setTrackingNumberSearch] = useState(initTrackingNumber)
-  const dispatch = useDispatch();
   
   useEffect(() => {
     if (trackingNumber) getPackageInfo()

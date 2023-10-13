@@ -1,20 +1,25 @@
 import * as bostaActions from "../actions"
 
-const initialState= {
-  packageInfo:{}
+const initialState = {
+  packageInfo: {},
+  local: 'ar'
 }
 
-export const bostaReducer = (state = initialState, action)=>{
-  const {payload, type} = action
-  console.log("🚀 ~ file: index.js:9 ~ bostaReducer ~ action:", action)
+export const bostaReducer = (state = initialState, action) => {
+  const { payload, type } = action
   switch (type) {
     case bostaActions.SET_PACKAGE_INFO:
-    console.log({action},"<= 1")
       return {
         ...state,
         packageInfo: payload
       }
-  
+
+    case bostaActions.SET_SELECTED_LOCAL:
+      return {
+        ...state,
+        local: payload
+      }
+
     default:
       return state;
   }

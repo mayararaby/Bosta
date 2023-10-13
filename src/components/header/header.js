@@ -3,6 +3,7 @@ import Logo from '../../assetes/bostaLogo.png'
 import './header.css'
 import { LeftArrow } from '../../assetes/headerArrows'
 import { TrackingSearch } from '../trackingSearch/trackingSearch'
+import LanguageMenu from '../languageMenu/languageMenu'
 // import { useSelector } from 'react-redux'
 
 export const Header = () => {
@@ -45,7 +46,8 @@ export const Header = () => {
             }
           </label>
           <label>تسجيل الدخول</label>
-          <label className='redTextColor'>ENG</label>
+          <LanguageMenu />
+          {/* <label className='redTextColor'>ENG</label> */}
         </div>
 
       </div>
