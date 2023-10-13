@@ -1,21 +1,23 @@
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
 import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types';
-import { steps, stepsIcons, StatusColorsCode } from '../../constants/index';
+import { steps, stepsIcons, StatusColorsCode ,rejectionInterfaces} from '../../constants/index';
 
-export const ColorlibConnector = styled(StepConnector)(({ theme ,activeStepperIndex }) => {
+export const ColorlibConnector = styled(StepConnector)(({ theme ,activeStepperIndex,lastAction }) => {
+  const {state} = lastAction
+  
   return {
     [`&.${stepConnectorClasses.alternativeLabel}`]: {
       top: 22,
     },
     [`&.${stepConnectorClasses.active}`]: {
       [`& .${stepConnectorClasses.line}`]: {
-        backgroundColor: StatusColorsCode[steps[activeStepperIndex]]
+        backgroundColor: rejectionInterfaces.includes(state)?StatusColorsCode[state]:StatusColorsCode[steps[activeStepperIndex]]
       },
     },
     [`&.${stepConnectorClasses.completed}`]: {
       [`& .${stepConnectorClasses.line}`]: {
-        backgroundColor: StatusColorsCode[steps[activeStepperIndex]]
+        backgroundColor: rejectionInterfaces.includes(state)?StatusColorsCode[state]:StatusColorsCode[steps[activeStepperIndex]]
       },
     },
     [`& .${stepConnectorClasses.line}`]: {
@@ -29,6 +31,8 @@ export const ColorlibConnector = styled(StepConnector)(({ theme ,activeStepperIn
 });
 
 const ColorlibStepIconRoot = styled('div')(({ theme, ownerState }) => {
+  const {lastAction,activeStepperIndex}= ownerState
+  const {state} = lastAction
   return {
     backgroundColor: theme.palette.mode === 'dark' ? theme.palette.grey[700] : '#ccc',
     zIndex: 1,
@@ -40,21 +44,21 @@ const ColorlibStepIconRoot = styled('div')(({ theme, ownerState }) => {
     justifyContent: 'center',
     alignItems: 'center',
     ...(ownerState.active && {
-      backgroundColor: StatusColorsCode[steps[ownerState.activeStepperIndex]]
+      backgroundColor: rejectionInterfaces.includes(state)?StatusColorsCode[state]:StatusColorsCode[steps[activeStepperIndex]]
     }),
     ...(ownerState.completed && {
-      backgroundColor: StatusColorsCode[steps[ownerState.activeStepperIndex]],
+      backgroundColor: rejectionInterfaces.includes(state)?StatusColorsCode[state]:StatusColorsCode[steps[activeStepperIndex]],
     }),
   }
 });
 
 
-export const ColorlibStepIcon = (props,activeStepperIndex) => {
+export const ColorlibStepIcon = (props,activeStepperIndex, lastAction) => {
   const { active, completed, className } = props;
   const iconsObject =stepsIcons[activeStepperIndex]
 
   return (
-    <ColorlibStepIconRoot ownerState={{ completed, active,activeStepperIndex }} className={className}>
+    <ColorlibStepIconRoot ownerState={{ completed, active,activeStepperIndex ,lastAction }} className={className}>
       {iconsObject[String(props.icon)]}
     </ColorlibStepIconRoot>
   );

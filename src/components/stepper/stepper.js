@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { steps, stepsIcons, packageStatus, StatusColorsCode } from '../../constants/index';
+import { steps, packageStatus } from '../../constants/index';
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
-import { StepIcon } from '@mui/material';
-
-import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
-import { styled } from '@mui/material/styles';
-import PropTypes from 'prop-types';
 import { ColorlibStepIcon, ColorlibConnector } from './customStyle';
 
 export default function StepperComponent({ TransitEvents, t }) {
   const [activeStepperIndex, setActiveStepperIndex] = useState(1);
+  const [lastAction, setLastAction] = useState("");
 
   useEffect(() => {
     const findIndexRecursive = (events, currentIndex) => {
@@ -26,22 +22,23 @@ export default function StepperComponent({ TransitEvents, t }) {
       }
       return findIndexRecursive(events, currentIndex - 1);
     };
-
     const lastIndex = TransitEvents.length - 1;
+    setLastAction(TransitEvents[lastIndex])
     findIndexRecursive(TransitEvents, lastIndex);
-    console.log({ activeStepperIndex });
+
+
   }, [TransitEvents]);
 
   return (
     <>
       <Box className="stepsContainer">
-        <Stepper activeStep={activeStepperIndex} alternativeLabel connector={<ColorlibConnector activeStepperIndex={activeStepperIndex} />
+        <Stepper activeStep={activeStepperIndex} alternativeLabel connector={<ColorlibConnector lastAction={lastAction} activeStepperIndex={activeStepperIndex} />
         }>
           {steps.map((label) => (
             <Step key={label}>
               <StepLabel
-                StepIconComponent={(props)=>(ColorlibStepIcon(props,activeStepperIndex))}
-                activeStepperIndex={activeStepperIndex} 
+                StepIconComponent={(props) => (ColorlibStepIcon(props, activeStepperIndex,lastAction))}
+                activeStepperIndex={activeStepperIndex}
               >
                 {t(packageStatus[label])}
               </StepLabel>

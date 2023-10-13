@@ -26,9 +26,11 @@ export const StatusColorsCode = {
   OUT_FOR_DELIVERY :"#ffcc00",
   DELIVERED : "#339900",
   CANCELLED : "#e30613",
+  DELIVERED_TO_SENDER:"#e30613",
   TICKET_CREATED :"#ffcc00",
 }
 
+export const rejectionInterfaces =['CANCELLED']
 
 export const steps = [
   'TICKET_CREATED',
