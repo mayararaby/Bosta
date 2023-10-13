@@ -3,10 +3,13 @@ import Logo from '../../assetes/bostaLogo.png'
 import './header.css'
 import { LeftArrow } from '../../assetes/headerArrows'
 import { TrackingSearch } from '../trackingSearch/trackingSearch'
+// import { useSelector } from 'react-redux'
 
 export const Header = () => {
   const [showComponent, setShowComponent] = useState(false)
   const showTrackingComponent = () => setShowComponent(!showComponent)
+  // const packageInfo = useSelector(state => state.packageInfo)
+
 
   return (
     <>

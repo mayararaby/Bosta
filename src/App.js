@@ -1,10 +1,10 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import {Home} from './pages/home/home';
+import Home from './pages/home/home';
 
 function App() {
   return (
-    <div className="arabicDirection">
+    <div className="App">
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
