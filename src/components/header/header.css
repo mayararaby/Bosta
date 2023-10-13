@@ -46,5 +46,10 @@ label:hover,
   font-weight: bold !important;
   border: 1px solid transparent !important;
   color: #e30613 !important;
+  font-family: 'Cairo', sans-serif !important;
+  
+}
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root{
+  font-family: 'Cairo', sans-serif !important;
 
 }

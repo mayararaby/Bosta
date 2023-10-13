@@ -2,11 +2,14 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import withDispatch from '../../hoc/withDispatch';
+import { setSelectedLocal } from '../../redux/actions';
+import withLocalize from '../../hoc/withLocalize';
 
-export default function LanguageMenu() {
+const LanguageMenu= ({ dispatch, t, i18n })=> {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [open, setOpen] = React.useState(false);
-  const [selectedLanguage, setSelectedLanguage] = React.useState('AR');
+  const [selectedLanguage, setSelectedLanguage] = React.useState(t('ar'));
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -19,7 +22,9 @@ export default function LanguageMenu() {
   };
 
   const handleLanguageChange = (language) => {
-    setSelectedLanguage(language);
+    setSelectedLanguage(t(language));
+    dispatch(setSelectedLocal(language.toLowerCase()))
+    i18n.changeLanguage(language.toLowerCase())
     handleClose();
   };
 
@@ -48,9 +53,10 @@ export default function LanguageMenu() {
           horizontal: 'left',
         }}
       >
-        <MenuItem onClick={() => handleLanguageChange('ENG')}>ENG</MenuItem>
-        <MenuItem onClick={() => handleLanguageChange('AR')}>AR</MenuItem>
+        <MenuItem onClick={() => handleLanguageChange('EN')}>{t('en')}</MenuItem>
+        <MenuItem onClick={() => handleLanguageChange('AR')}>{t('ar')}</MenuItem>
       </Menu>
     </div>
   );
 }
+export default withDispatch (withLocalize(LanguageMenu))

@@ -4,12 +4,13 @@ import './header.css'
 import { LeftArrow } from '../../assetes/headerArrows'
 import { TrackingSearch } from '../trackingSearch/trackingSearch'
 import LanguageMenu from '../languageMenu/languageMenu'
-// import { useSelector } from 'react-redux'
-
-export const Header = () => {
+import { useSelector } from 'react-redux'
+import withLocalize from '../../hoc/withLocalize'
+const Header = ({t}) => {
   const [showComponent, setShowComponent] = useState(false)
   const showTrackingComponent = () => setShowComponent(!showComponent)
-  // const packageInfo = useSelector(state => state.packageInfo)
+  // const packageInfo = useSelector(state => state.local)
+  // console.log("🚀 ~ file: header.js:13 ~ Header ~ packageInfo:", packageInfo)
 
 
   return (
@@ -25,27 +26,27 @@ export const Header = () => {
 
         <div className='middleSection headerTxtSection'>
           <label>
-            الرئيسية
+            {t('home')}
           </label>
           <label>
-            الأسعار
+            {t('prices')}
           </label>
           <label>
-            كلم المبيعات
+            {t('contactUs')}
           </label>
         </div>
 
         <div className='lastSection headerTxtSection'>
           <label className={`trackingSection ${showComponent&&'borderShadow'}`}>
             <span className='redTextColor tracking-text' onClick={showTrackingComponent} >
-              تتبع شحنتك
+              {t('trackShipment')}
             </span>
             <LeftArrow />
             {
               showComponent && <TrackingSearch />
             }
           </label>
-          <label>تسجيل الدخول</label>
+          <label>{t('login')}</label>
           <LanguageMenu />
           {/* <label className='redTextColor'>ENG</label> */}
         </div>
@@ -55,3 +56,5 @@ export const Header = () => {
     </>
   )
 }
+
+export default withLocalize(Header)

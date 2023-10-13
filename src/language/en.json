@@ -1,3 +1,9 @@
 {
-  "test":"TEST"
+  "trackShipment":"Track Shipment",
+  "home":"Home",
+  "prices" :"Prices",
+  "contactUs":"Contact us",
+  "login" : "Login",
+  "ar":"AR",
+  "en":"ENG"
 }

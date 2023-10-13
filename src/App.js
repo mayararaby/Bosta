@@ -1,8 +1,12 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/home/home';
-
-function App() {
+import withLocalize from './hoc/withLocalize';
+import { useEffect } from 'react';
+function App({i18n}) {
+  useEffect(()=>{
+    i18n.changeLanguage('ar')
+  },[])
   return (
     <div className="arabicDirection">
       <Router>
@@ -14,4 +18,5 @@ function App() {
   );
 }
 
-export default App;
+export default withLocalize(App) ;
+
