@@ -22,10 +22,9 @@ const LanguageMenu= ({ dispatch, t, i18n })=> {
   };
   
   const handleLanguageChange = (language) => {
-    const local = language.toLowerCase()
-    setSelectedLanguage(local);
-    dispatch(setSelectedLocal(local))
-    i18n.changeLanguage(local)
+    setSelectedLanguage(language);
+    dispatch(setSelectedLocal(language))
+    i18n.changeLanguage(language)
     handleClose();
   };
 
@@ -54,8 +53,8 @@ const LanguageMenu= ({ dispatch, t, i18n })=> {
           horizontal: 'left',
         }}
       >
-        <MenuItem onClick={() => handleLanguageChange('EN')}>{t('en')}</MenuItem>
-        <MenuItem onClick={() => handleLanguageChange('AR')}>{t('ar')}</MenuItem>
+        <MenuItem onClick={() => handleLanguageChange('en')}>{t('en')}</MenuItem>
+        <MenuItem onClick={() => handleLanguageChange('ar')}>{t('ar')}</MenuItem>
       </Menu>
     </div>
   );

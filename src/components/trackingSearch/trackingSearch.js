@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import './trackingSearch.css'
 import  HeaderSearch  from "../../assetes/headerSearch"
-
-export const TrackingSearch = () => {
+import withLocalize from '../../hoc/withLocalize'
+const TrackingSearch = ({t}) => {
   const [trackingNumber, setTrackingNumber] = useState("")
   const handelTrackingNumber = (e) => (setTrackingNumber(e.target.value.trim()))
 
@@ -10,13 +10,14 @@ export const TrackingSearch = () => {
     <>
       <div className="mainTrackingContainer">
         <div className="trackingHorizontalMargin">
-          تتبع شحنتك
+         {t('trackingNo')}
         </div>
         <div className="inputContainer">
-          <input onChange={handelTrackingNumber} value={trackingNumber} className="trackingSearchInput trackingHorizontalMargin" type="text" placeholder="رقم التتبع" />
+          <input onChange={handelTrackingNumber} value={trackingNumber} className="trackingSearchInput trackingHorizontalMargin" type="text" placeholder={t('trackingNo')} />
           <HeaderSearch trackingNumber={trackingNumber} />
         </div>
       </div>
     </>
   )
 }
+export default withLocalize(TrackingSearch)
