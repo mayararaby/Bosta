@@ -9,22 +9,23 @@ import withLocalize from '../../hoc/withLocalize';
 const LanguageMenu= ({ dispatch, t, i18n })=> {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [open, setOpen] = React.useState(false);
-  const [selectedLanguage, setSelectedLanguage] = React.useState(t('ar'));
-
+  const [selectedLanguage, setSelectedLanguage] = React.useState('ar');
+  
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
     setOpen(true);
   };
-
+  
   const handleClose = () => {
     setAnchorEl(null);
     setOpen(false);
   };
-
+  
   const handleLanguageChange = (language) => {
-    setSelectedLanguage(t(language));
-    dispatch(setSelectedLocal(language.toLowerCase()))
-    i18n.changeLanguage(language.toLowerCase())
+    const local = language.toLowerCase()
+    setSelectedLanguage(local);
+    dispatch(setSelectedLocal(local))
+    i18n.changeLanguage(local)
     handleClose();
   };
 
@@ -37,7 +38,7 @@ const LanguageMenu= ({ dispatch, t, i18n })=> {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-        {selectedLanguage}
+        {t(selectedLanguage)}
       </Button>
       <Menu
         id="demo-positioned-menu"
