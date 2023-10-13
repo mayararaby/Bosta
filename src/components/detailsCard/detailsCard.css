@@ -1,0 +1,25 @@
+.detailsCardContainer {
+  border: 1px solid #dbd8d8;
+  margin: 30px auto 30px auto;
+  border-radius: 5px;
+  width: 90%;
+  height: auto;
+  padding: 10px 0px 10px 0px;
+}
+
+.packageInfoContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+}
+.packageSubInfoContainer{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+}

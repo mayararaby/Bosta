@@ -4,7 +4,7 @@
 
 .arabicDirection{
   direction: rtl;
-  height: 98%;
+  height: 97%;
 }
 
 .line{
@@ -14,4 +14,11 @@
 
 .imgLogo{
   width: 150px;
+}
+.bold{
+  font-weight: bold;
+}
+
+.secondaryColor{
+  color:#989797
 }
