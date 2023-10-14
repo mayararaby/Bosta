@@ -13,7 +13,11 @@ const Home = () => {
   return (
     <>
       <Header />
+      {/* 
+        if there is result for provided tracking number from user will display it of not will display a placeholder image
+      */}
       {Object.keys(packageInfo).length ? <DetailsCard /> :<div className='noResultContainer'><img src={noResult} alt='no-result'  className='no-resultImage'/></div>}
+      {/* Lazy load component display it when request is still pending  */}
       {loading ? <div className='parentLoading'>
         <Loading />
       </div> : <></>}

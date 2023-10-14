@@ -15,11 +15,14 @@ import { useSelector } from 'react-redux';
 
 const DetailsPackage = ({ TransitEvents, t }) => {
 
+  // return rows
   const createData = (branch, date, time, details) => {
     return { branch, date, time, details };
   };
 
+  //Table data rows from TransitEvents
   const createDataRow = TransitEvents.map((event) => {
+    // get date and time separated from timestamp
     const date = new Date(event.timestamp);
     const time = date.toLocaleTimeString([], {
       hour: '2-digit',
@@ -35,6 +38,7 @@ const DetailsPackage = ({ TransitEvents, t }) => {
     );
   });
 
+  // custom font family style
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     fontFamily: 'Cairo',
   }));

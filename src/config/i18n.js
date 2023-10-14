@@ -4,7 +4,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpBackend from 'i18next-http-backend';
 import en from '../language/en.json'
 import ar from '../language/ar.json'
-
+// Package config
 i18n
   .use(HttpBackend)
   .use(LanguageDetector)

@@ -13,12 +13,9 @@ const TrackingSearch = ({ t, dispatch , setShowComponent }) => {
   const handelTrackingNumber = (e) => (setTrackingNumber(e.target.value.trim()))
   const selectedLanguage = useSelector(state => state.local)
   
+  //When user press enter
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      setTrackingNumberSearch(trackingNumber);
-      // setShowComponent(false)
-      
-    }
+    if (e.key === 'Enter') setTrackingNumberSearch(trackingNumber);
   };
 
   return (

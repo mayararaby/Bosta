@@ -11,16 +11,19 @@ const LanguageMenu = ({ dispatch, t, i18n }) => {
   const [open, setOpen] = React.useState(false);
   const [selectedLanguage, setSelectedLanguage] = React.useState('ar');
 
+  // open menu
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
     setOpen(true);
   };
 
+  //close menu
   const handleClose = () => {
     setAnchorEl(null);
     setOpen(false);
   };
 
+  // when change language update reducer & i18n with change
   const handleLanguageChange = (language) => {
     setSelectedLanguage(language);
     dispatch(setSelectedLocal(language));

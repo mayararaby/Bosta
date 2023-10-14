@@ -1,3 +1,4 @@
+// Change dateString format 
 export const _performDate = (dateString) => {
   // Create a new Date object from the date string.
   const dateObject = new Date(dateString);

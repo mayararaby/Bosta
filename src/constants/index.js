@@ -3,8 +3,10 @@ import LocalPostOfficeIcon from '@mui/icons-material/LocalPostOffice';
 import DoneIcon from '@mui/icons-material/Done';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 
-
+//Tracking service url
 export const trackingServiceUrl ='https://tracking.bosta.co/shipments/track/'
+
+//Mapping package status with readable keys 
 export const packageStatus = {
   TICKET_CREATED:"ticketCreated",
   PACKAGE_RECEIVED :"packageReceived",
@@ -17,12 +19,14 @@ export const packageStatus = {
   CANCELLED : "cancelled"
 }
 
+//Mapping package status with css classes
 export const StatusColors = {
   DELIVERED_TO_SENDER :"returnPackage",
   DELIVERED : "deliveredPackage",
   CANCELLED : "cancelledPackage"
 }
 
+// Mapping packages status with colors
 export const StatusColorsCode = {
   OUT_FOR_DELIVERY :"#ffcc00",
   DELIVERED : "#339900",
@@ -40,6 +44,7 @@ export const steps = [
   'DELIVERED'
 ]
 
+// Stepper icons
 export const stepsIcons = {
   '0':{
     1:<DoneIcon />,
@@ -67,7 +72,7 @@ export const stepsIcons = {
   }
 }
 
-
+// Table details columns
 export const  columns = [
   {
     id: 'branch',

@@ -11,6 +11,7 @@ export default function StepperComponent({ TransitEvents, t }) {
   const [lastAction, setLastAction] = useState("");
 
   useEffect(() => {
+    // Recursive function to find the step index in const steps from TransitEvents based on the last action
     const findIndexRecursive = (events, currentIndex) => {
       if (currentIndex < 0) return -1;
 
