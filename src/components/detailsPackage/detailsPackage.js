@@ -79,7 +79,10 @@ const DetailsPackage = ({ TransitEvents, t }) => {
                                   </div>
                                 ))}
                               </span>
-                            ) : (
+                            ) : column.id === 'time'?value.split(' ').map((statement,index)=>(
+                              <span className='packageInfoTableTime'>{(statement ==='AM' || statement ==='PM')?t(statement):statement}</span>
+                            ))
+                            : (
                               <div className='packageInfoTable'>{value}</div>
                             )}
                           </StyledTableCell>

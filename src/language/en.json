@@ -28,5 +28,7 @@
   "deliverAddress":"Deliver address",
   "dispatchIssue" :"Report a problem",
   "dispatchQuestion" :"Is there any problem with your package!?",
-  "wrongTrackNo":"Wrong tracking number, try another one."
+  "wrongTrackNo":"Wrong tracking number, try another one.",
+  "AM":"AM",
+  "PM":"PM"
 }
