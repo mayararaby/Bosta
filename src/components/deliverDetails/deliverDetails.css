@@ -26,8 +26,13 @@
   border-radius: 20px;
   margin: 10px;
   width: 80%;
+  cursor: pointer;
+  transition: background-color 1s;
 }
+.dispatchAnProblem:hover{
+  background-color: #9b0812;
 
+}
 .imageSizeQuestion{
   width: 100%;
 }

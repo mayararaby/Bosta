@@ -63,6 +63,11 @@ input[type="text"]::placeholder  {
   background-color: #e30613;
   padding: 13px;
   cursor: pointer;
+  transition: background-color 1s;
+}
+
+.iconSearch:hover{
+  background-color: #9b0812;
 }
 .iconSearchRight {
 
