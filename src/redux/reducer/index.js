@@ -2,7 +2,7 @@ import * as bostaActions from "../actions"
 
 const initialState = {
   packageInfo: {},
-  local: 'ar'
+  local: 'ar',
 }
 
 export const bostaReducer = (state = initialState, action) => {

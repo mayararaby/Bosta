@@ -27,5 +27,6 @@
   "date":"Date",
   "deliverAddress":"Deliver address",
   "dispatchIssue" :"Report a problem",
-  "dispatchQuestion" :"Is there any problem with your package!?"
+  "dispatchQuestion" :"Is there any problem with your package!?",
+  "wrongTrackNo":"Wrong tracking number, try another one."
 }

@@ -17,7 +17,7 @@ const TrackingSearch = ({ t }) => {
         </div>
         <div className="inputContainer">
           <input onChange={handelTrackingNumber} value={trackingNumber} className={`${selectedLanguage==='ar'?'trackingSearchInputRight':'trackingSearchInputLeft'} trackingHorizontalMargin trackingSearchInput`} type="text" placeholder={t('trackingNo')} />
-          <HeaderSearch selectedLanguage={selectedLanguage} trackingNumber={trackingNumber} />
+          <HeaderSearch t={t} selectedLanguage={selectedLanguage} trackingNumber={trackingNumber} />
         </div>
       </div>
     </>

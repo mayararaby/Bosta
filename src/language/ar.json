@@ -27,5 +27,6 @@
   "date":"التاريخ",
   "deliverAddress":"عنوان التسليم",
   "dispatchIssue" : "الإبلاغ عن مشكلة",
-  "dispatchQuestion":"هل يوجد مشكلة في شحنتك !؟"
+  "dispatchQuestion":"هل يوجد مشكلة في شحنتك !؟",
+  "wrongTrackNo" :"رقم تتبع خاطئ ، الرجاء المحاولة مره اخري "
 }
