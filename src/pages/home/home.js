@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      {Object.keys(packageInfo).length ? <DetailsCard /> :<div className='noResultContainer'><img src={noResult} alt='no-result' /></div>}
+      {Object.keys(packageInfo).length ? <DetailsCard /> :<div className='noResultContainer'><img src={noResult} alt='no-result'  className='no-resultImage'/></div>}
       {loading ? <div className='parentLoading'>
         <Loading />
       </div> : <></>}
