@@ -11,7 +11,7 @@ const TrackingSearch = ({ t }) => {
 
   return (
     <>
-      <div className="mainTrackingContainer">
+      <div className={`${selectedLanguage==='ar'?'mainTrackingContainerRight':'mainTrackingContainerLeft'} mainTrackingContainer`}>
         <div className="trackingHorizontalMargin">
           {t('trackingNo')}
         </div>

@@ -6,9 +6,7 @@
   height: auto;
   border: 1px solid #0000001a;
   border-radius: 10px;
-  border-top-left-radius: 0;
   padding: 10px;
-  left: -2px;
   padding: 10px 30px 10px 30px;
   display: flex;
   flex-direction: column;
@@ -17,6 +15,16 @@
   justify-content: flex-start;
   align-items: flex-start;
   z-index: 1;
+}
+
+.mainTrackingContainerRight{
+  right: -2px;
+  border-top-right-radius: 0;
+}
+
+.mainTrackingContainerLeft{
+  left: -2px;
+  border-top-left-radius: 0;
 }
 
 input[type="text"]::placeholder  {
