@@ -42,7 +42,7 @@ const DetailsPackage = ({ TransitEvents, t }) => {
   const selectedLanguage = useSelector(state => state.local)
 
   return (
-    <div className="detailsPackageContainer">
+    <div className="detailsPackageContainer detailsPackageContainerTables">
       <div className='packageInfoTitle'>
         {t('packageDetails')}
       </div>
