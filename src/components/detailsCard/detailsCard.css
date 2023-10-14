@@ -47,7 +47,21 @@
 }
 
 @media (max-width: 768px) {
-  .detailsContainer {
-    flex-wrap: wrap;
+  .detailsContainer,
+  .headerTxtSection,
+  .headerContainer,
+  .packageInfoContainer,
+  .questionContainerImage
+  {
+    flex-direction: column;
+
+  }
+  .packageInfoContainer
+  {
+    align-items: flex-start;
+    align-content: flex-start
+  }
+  .mainTrackingContainer{
+    width: 100%;
   }
 }
