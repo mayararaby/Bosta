@@ -9,7 +9,6 @@ const Home = () => {
   const packageInfo = useSelector(state => state.packageInfo)
   const loading = useSelector(state => state.loading)
 
-  console.log({ loading })
   return (
     <>
       <Header />
