@@ -37,10 +37,14 @@ export default function StepperComponent({ TransitEvents, t }) {
           {steps.map((label) => (
             <Step key={label}>
               <StepLabel
-                StepIconComponent={(props) => (ColorlibStepIcon(props, activeStepperIndex,lastAction))}
+                
+                StepIconComponent={(props) => (ColorlibStepIcon(props, activeStepperIndex, lastAction))}
                 activeStepperIndex={activeStepperIndex}
               >
+                <span className='stepperLabel'>
+
                 {t(packageStatus[label])}
+                </span>
               </StepLabel>
             </Step>
           ))}
