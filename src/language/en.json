@@ -19,5 +19,13 @@
   "cancelled" :"Cancelled",
   "deliveredTime" : "Delivery time within",
   "seller":"Seller name",
-  "lastUpdate":"Last update"
+  "lastUpdate":"Last update",
+  "packageDetails":"Package details",
+  "branch":"Branch",
+  "time":"Time",
+  "details":"Details",
+  "date":"Date",
+  "deliverAddress":"Deliver address",
+  "dispatchIssue" :"Report a problem",
+  "dispatchQuestion" :"Is there any problem with your package!?"
 }

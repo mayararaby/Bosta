@@ -7,14 +7,17 @@ import withLocalize from '../../hoc/withLocalize'
 import StepperComponent from '../stepper/stepper'
 import DetailsPackage from '../detailsPackage/detailsPackage'
 import DeliverDetails from '../deliverDetails/deliverDetails'
+
 const DetailsCard = ({ t }) => {
   const packageInfo = useSelector(state => state.packageInfo)
+  const selectedLanguage = useSelector(state => state.local)
+
   const { provider, TrackingNumber, CurrentStatus, PromisedDate, TransitEvents } = packageInfo
   const { state, timestamp } = CurrentStatus
 
   return (
     <>
-      <div className='detailsCardContainer'>
+      <div className='detailsCardContainer' style={{direction:`${selectedLanguage==='en'?'ltr':'rtl'}`}}>
 
         <div className='packageInfoContainer'>
           <div className='packageSubInfoContainer'>
@@ -39,7 +42,7 @@ const DetailsCard = ({ t }) => {
 
 
       </div>
-      <div className='detailsContainer'>
+      <div className='detailsContainer'  style={{direction:`${selectedLanguage==='en'?'ltr':'rtl'}`}} >
         <DetailsPackage TransitEvents={TransitEvents} t={t} />
         <DeliverDetails t={t} />
       </div>

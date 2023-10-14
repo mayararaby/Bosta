@@ -11,6 +11,7 @@ import './detailsPackage.css';
 import withLocalize from '../../hoc/withLocalize';
 import { styled } from '@mui/material/styles';
 import { columns } from '../../constants';
+import { useSelector } from 'react-redux';
 
 
 
@@ -29,7 +30,7 @@ const DetailsPackage = ({ TransitEvents, t }) => {
     });
     const formattedDate = date.toISOString().slice(0, 10);
     return createData(
-      event.hub || t('NaserCity'),
+      event.hub || 'Naser City',
       formattedDate,
       time,
       `${t(packageStatus[event.state])},${event.reason || ''}`
@@ -40,53 +41,56 @@ const DetailsPackage = ({ TransitEvents, t }) => {
     fontFamily: 'Cairo',
   }));
 
+  const selectedLanguage = useSelector(state => state.local)
 
   return (
     <div className="detailsPackageContainer">
       <div className='packageInfoTitle'>
-        تفاصيل الشحنه
+    {t('packageDetails')}
       </div>
-      <Paper>
-        <TableContainer>
-          <Table stickyHeader aria-label="sticky table">
-            <TableHead sx={{ backgroundColor: '#e30613' }}>
-              <TableRow>
-                {columns.map((column) => (
-                  <StyledTableCell key={column.id} align={column.align}>
-                    {column.label}
-                  </StyledTableCell>
-                ))}
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {createDataRow.map((row) => {
-                return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                    {columns.map((column) => {
-                      const value = row[column.id];
-                      return (
-                        <StyledTableCell key={column.id} align={column.align}>
-                          {column.id === 'details' ? (
-                            <span className='detailsTable'>
-                              {value.split(',').map((statement, index) => (
-                                <div className={value.split(',').length - 1 === index ? 'cancelledPackage' : 'packageInfoTable'}>
-                                  {statement}
-                                </div>
-                              ))}
-                            </span>
-                          ) : (
-                            <div className='packageInfoTable'>{value}</div>
-                          )}
-                        </StyledTableCell>
-                      );
-                    })}
-                  </TableRow>
-                );
-              })}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </Paper>
+      <div className='tableContainer'>
+        <Paper>
+          <TableContainer>
+            <Table stickyHeader aria-label="sticky table">
+              <TableHead sx={{ backgroundColor: '#e30613' }}>
+                <TableRow>
+                  {columns.map((column) => (
+                    <StyledTableCell key={column.id} align={`${selectedLanguage ==='ar'?column.align:'left'}`}>
+                      {t(column.label)}
+                    </StyledTableCell>
+                  ))}
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {createDataRow.map((row) => {
+                  return (
+                    <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                      {columns.map((column) => {
+                        const value = row[column.id];
+                        return (
+                          <StyledTableCell key={column.id} align={`${selectedLanguage ==='ar'?column.align:'left'}`}>
+                            {column.id === 'details' ? (
+                              <span className='detailsTable'>
+                                {value.split(',').map((statement, index) => (
+                                  <div className={value.split(',').length - 1 === index ? 'cancelledPackage' : 'packageInfoTable'}>
+                                    {statement}
+                                  </div>
+                                ))}
+                              </span>
+                            ) : (
+                              <div className='packageInfoTable'>{value}</div>
+                            )}
+                          </StyledTableCell>
+                        );
+                      })}
+                    </TableRow>
+                  );
+                })}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Paper>
+      </div>
     </div>
   );
 };

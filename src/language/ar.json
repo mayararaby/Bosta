@@ -19,5 +19,13 @@
   "delivered" :  "تم تسليم الشحنة",
   "deliveredTime" :"موعد التسليم خلال",
   "seller" : "اسم التاجر",
-  "lastUpdate" : "أخر تحديث"
+  "lastUpdate" : "أخر تحديث",
+  "packageDetails" :"تفاصيل الشحنة",
+  "branch":"الفرع",
+  "time":"الوقت",
+  "details":"التفاصيل",
+  "date":"التاريخ",
+  "deliverAddress":"عنوان التسليم",
+  "dispatchIssue" : "الإبلاغ عن مشكلة",
+  "dispatchQuestion":"هل يوجد مشكلة في شحنتك !؟"
 }

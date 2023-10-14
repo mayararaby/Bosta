@@ -3,6 +3,7 @@ import LocalPostOfficeIcon from '@mui/icons-material/LocalPostOffice';
 import DoneIcon from '@mui/icons-material/Done';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 
+
 export const trackingServiceUrl ='https://tracking.bosta.co/shipments/track/'
 export const packageStatus = {
   TICKET_CREATED:"ticketCreated",
@@ -70,23 +71,23 @@ export const stepsIcons = {
 export const  columns = [
   {
     id: 'branch',
-    label: 'الفرع',
+    label: 'branch',
     align: 'right',
   },
   {
     id: 'date',
-    label: 'التاريخ',
+    label: 'date',
     align: 'right',
   },
   {
     id: 'time',
-    label: 'الوقت',
+    label: 'time',
     minWidth: 170,
     align: 'right',
   },
   {
     id: 'details',
-    label: 'تفاصيل',
+    label: 'details',
     align: 'right',
     verticalText: true,
   },

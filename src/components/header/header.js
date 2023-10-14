@@ -1,23 +1,28 @@
 import React, { useState } from 'react'
-import Logo from '../../assetes/bostaLogo.png'
+import LogoRight from '../../assetes/bostaLogo.png'
 import './header.css'
-import { LeftArrow } from '../../assetes/headerArrows'
+import LogoLeft from '../../assetes/enlogo.png'
+import { LeftArrow, RightArrow } from '../../assetes/headerArrows'
 import TrackingSearch from '../trackingSearch/trackingSearch'
 import LanguageMenu from '../languageMenu/languageMenu'
 import withLocalize from '../../hoc/withLocalize'
-const Header = ({t}) => {
+import { useSelector } from 'react-redux'
+const Header = ({ t }) => {
   const [showComponent, setShowComponent] = useState(false)
   const showTrackingComponent = () => setShowComponent(!showComponent)
+  const selectedLanguage = useSelector(state => state.local)
 
 
   return (
     <>
 
-      <div className='headerContainer'>
+      <div className='headerContainer' style={{ direction: `${selectedLanguage === 'en' ? 'ltr' : 'rtl'}` }}>
 
 
         <div className='logo'>
-          <img className='imgLogo' src={Logo} alt='logo' />
+          {selectedLanguage === 'ar' && <img className='imgLogo' src={LogoRight} alt='logo' />}
+          {selectedLanguage === 'en' && <img className='imgLogo' src={LogoLeft} alt='logo' />}
+
         </div>
 
 
@@ -34,11 +39,13 @@ const Header = ({t}) => {
         </div>
 
         <div className='lastSection headerTxtSection'>
-          <label className={`trackingSection ${showComponent&&'borderShadow'}`}>
+          <label className={`trackingSection ${showComponent && 'borderShadow'}`}>
             <span className='redTextColor tracking-text' onClick={showTrackingComponent} >
               {t('trackShipment')}
             </span>
-            <LeftArrow />
+            {selectedLanguage === 'ar' && <LeftArrow />}
+            {selectedLanguage === 'en' && <RightArrow />}
+
             {
               showComponent && <TrackingSearch />
             }

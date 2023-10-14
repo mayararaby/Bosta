@@ -10,7 +10,7 @@ const Home = (props) => {
   return (
     <>
       <Header />
-      {Object.keys(packageInfo).length&&<DetailsCard />}
+      {Object.keys(packageInfo).length?<DetailsCard />:<></>}
     </>
   )
 }

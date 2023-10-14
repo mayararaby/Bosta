@@ -23,14 +23,21 @@ input[type="text"]::placeholder  {
   font-family: 'Cairo', sans-serif;
 
 }
-.trackingSearchInput {
+.trackingSearchInput{
   outline: none;
   border: 1px solid #dbd8d8;
-  border-radius: 0px 5px 5px 0px;
   width: 75%;
   padding: 15px;
   flex: 1;
   background-color: transparent;
+}
+.trackingSearchInputRight {
+
+  border-radius: 0px 5px 5px 0px;
+}
+
+.trackingSearchInputLeft {
+  border-radius: 5px 0px 0px 5px;
 }
 
 .trackingHorizontalMargin{
@@ -43,10 +50,16 @@ input[type="text"]::placeholder  {
   align-items: center;
   width: 90%;
 }
-
-.iconSearch {
+.iconSearch{
   width: 20px;
   background-color: #e30613;
   padding: 13px;
+}
+.iconSearchRight {
+
   border-radius: 5px 0px 0px 5px;
+}
+
+.iconSearchLeft {
+  border-radius: 0px 5px 5px 0px;
 }
