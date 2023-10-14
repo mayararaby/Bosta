@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import { trackingServiceUrl } from "../constants";
-import { setPackageInfo, setLoading } from "../redux/actions";
+import { setPackageInfo, setLoading, setTrackingResult } from "../redux/actions";
 import { useNavigate } from "react-router-dom";
 
-export const useTrackingService = ({ initTrackingNumber, dispatch }) => {
+export const useTrackingService = ({ initTrackingNumber, dispatch,setShowComponent }) => {
   const [trackingNumber, setTrackingNumberSearch] = useState(initTrackingNumber);
-  const [trackingResult, setTrackingResult] = useState(true);
   const navigate = useNavigate();
 
 
@@ -15,24 +14,25 @@ export const useTrackingService = ({ initTrackingNumber, dispatch }) => {
   }, [trackingNumber]);
 
   const getPackageInfo = () => {
-    setTrackingResult(true);
+    dispatch(setTrackingResult(true))
     dispatch(setLoading(true));
-
     axios.get(`${trackingServiceUrl}${trackingNumber}`)
       .then(response => {
         dispatch(setPackageInfo(response.data));
         dispatch(setLoading(false));
         navigate('/');
+        setShowComponent(false)
       })
       .catch(error => {
         console.log(error);
-        setTrackingResult(false);
+        dispatch(setTrackingResult(false));
         dispatch(setLoading(false));
+        setShowComponent(false)
+
       });
   };
 
   return {
     setTrackingNumberSearch,
-    trackingResult
   };
 };

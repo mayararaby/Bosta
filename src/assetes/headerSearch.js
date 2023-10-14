@@ -1,16 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useTrackingService } from "../customHooks/useTrackingService";
 import withDispatch from '../hoc/withDispatch';
-import { SnackbarCustom } from "../components/snackbar/snackbar";
 
-const HeaderSearch = (props) => {
-  const { trackingNumber, dispatch, selectedLanguage, t } = props;
-  const [open, setOpen] = useState(false);
-  const { setTrackingNumberSearch, trackingResult } = useTrackingService({ initTrackingNumber: trackingNumber, dispatch });
-
-  useEffect(() => {
-    setOpen(!trackingResult);
-  }, [trackingResult]);
+const HeaderSearch = ({ trackingNumber, dispatch, selectedLanguage ,setShowComponent} ) => {
+  const { setTrackingNumberSearch } = useTrackingService({ initTrackingNumber: trackingNumber, dispatch, setShowComponent });
 
   const handleSvgClick = () => {
     setTrackingNumberSearch(trackingNumber);
@@ -18,9 +11,6 @@ const HeaderSearch = (props) => {
 
   return (
     <>
-      {!trackingResult && (
-        <SnackbarCustom statue='error' message={t('wrongTrackNo')} open={open} setOpen={setOpen} />
-      )}
       <svg
         onClick={handleSvgClick}
         className={`${selectedLanguage === 'ar' ? "iconSearchRight" : "iconSearchLeft"} iconSearch`}

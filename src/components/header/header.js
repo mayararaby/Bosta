@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import LogoRight from '../../assetes/bostaLogo.png'
 import './header.css'
 import LogoLeft from '../../assetes/enlogo.png'
@@ -7,11 +7,18 @@ import TrackingSearch from '../trackingSearch/trackingSearch'
 import LanguageMenu from '../languageMenu/languageMenu'
 import withLocalize from '../../hoc/withLocalize'
 import { useSelector } from 'react-redux'
+import { SnackbarCustom } from '../snackbar/snackbar'
 const Header = ({ t }) => {
   const [showComponent, setShowComponent] = useState(false)
+  const [open, setOpen] = useState(false);
+
   const showTrackingComponent = () => setShowComponent(!showComponent)
   const selectedLanguage = useSelector(state => state.local)
+  const trackingResult = useSelector(state => state.trackingResult)
 
+  useEffect(() => {
+    setOpen(!trackingResult);
+  }, [trackingResult]);
 
   return (
     <>
@@ -47,7 +54,7 @@ const Header = ({ t }) => {
             {selectedLanguage === 'en' && <RightArrow />}
 
             {
-              showComponent && <TrackingSearch />
+              showComponent && <TrackingSearch setShowComponent={setShowComponent} />
             }
           </label>
           <label>{t('login')}</label>
@@ -56,6 +63,9 @@ const Header = ({ t }) => {
 
       </div>
       <div className='line'></div>
+      {!trackingResult && (
+        <SnackbarCustom statue='error' message={t('wrongTrackNo')} open={open} setOpen={setOpen} />
+      )}
     </>
   )
 }
