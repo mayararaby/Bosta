@@ -45,3 +45,9 @@
   width: 90%;
   margin: auto;
 }
+
+@media (max-width: 768px) {
+  .detailsContainer {
+    flex-wrap: wrap;
+  }
+}

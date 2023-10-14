@@ -5,7 +5,7 @@ import question from '../../assetes/question.jpg'
 const DeliverDetails = ({ t }) => {
   return (
     <>
-      <div>
+      <div className='secondSectionDeliveryDetails'>
         <div className='detailsPackageContainer'>
           <div className='packageInfoTitle'>{t('deliverAddress')}</div>
           <div className='addressInfo addressInfoBG'>37 Mohammed Youssef mosa, abdEla8ad ST, Naser City, Egypt</div>
