@@ -3,6 +3,7 @@ import * as bostaActions from "../actions"
 const initialState = {
   packageInfo: {},
   local: 'ar',
+  loading: false
 }
 
 export const bostaReducer = (state = initialState, action) => {
@@ -20,6 +21,11 @@ export const bostaReducer = (state = initialState, action) => {
         local: payload
       }
 
+    case bostaActions.SET_LOADING:
+      return {
+        ...state,
+        loading: payload
+      }
     default:
       return state;
   }
