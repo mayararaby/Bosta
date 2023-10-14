@@ -11,14 +11,6 @@
   flex-direction: column;
 }
 
-.css-uhgsoh-MuiTableCell-root,
-.css-1yfdxvw-MuiTableCell-root{
-  background-color: #f4f2f2 !important;
-  color: #9e9c9c !important;
-  font-weight: bold !important;
-
-}
-
 .packageInfoTitle{
   color: #3f3f3f ;
   font-weight: bold ;

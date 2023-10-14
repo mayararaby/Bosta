@@ -1,7 +1,7 @@
 # Bosta
 Bosta tracking service
 
-Please note this is the tracking service only, you can find the deployed demo [here](https://local/)
+Please note this is the tracking service only, you can find the deployed demo [here](https://bosta-topaz.vercel.app/)
 
 ![Demo](demo.JPG)
 ## Requirements

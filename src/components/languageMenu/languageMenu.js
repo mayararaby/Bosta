@@ -6,25 +6,25 @@ import withDispatch from '../../hoc/withDispatch';
 import { setSelectedLocal } from '../../redux/actions';
 import withLocalize from '../../hoc/withLocalize';
 
-const LanguageMenu= ({ dispatch, t, i18n })=> {
+const LanguageMenu = ({ dispatch, t, i18n }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [open, setOpen] = React.useState(false);
   const [selectedLanguage, setSelectedLanguage] = React.useState('ar');
-  
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
     setOpen(true);
   };
-  
+
   const handleClose = () => {
     setAnchorEl(null);
     setOpen(false);
   };
-  
+
   const handleLanguageChange = (language) => {
     setSelectedLanguage(language);
-    dispatch(setSelectedLocal(language))
-    i18n.changeLanguage(language)
+    dispatch(setSelectedLocal(language));
+    i18n.changeLanguage(language);
     handleClose();
   };
 
@@ -36,6 +36,22 @@ const LanguageMenu= ({ dispatch, t, i18n })=> {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
+        sx={{
+          padding: '15px 28px',
+          fontWeight: 'bold',
+          border: '1px solid transparent',
+          color: '#e30613',
+          fontFamily: 'Cairo',
+          '&:hover': {
+            border: '1px solid #0000001a',
+            borderBottomColor: 'transparent',
+            borderRadius: '10px',
+            borderBottomLeftRadius: 0,
+            borderBottomRightRadius: 0,
+            backgroundColor: 'transparent',
+            fontFamily: 'Cairo',
+          },
+        }}
       >
         {t(selectedLanguage)}
       </Button>
@@ -53,10 +69,11 @@ const LanguageMenu= ({ dispatch, t, i18n })=> {
           horizontal: 'left',
         }}
       >
-        <MenuItem onClick={() => handleLanguageChange('en')}>{t('en')}</MenuItem>
-        <MenuItem onClick={() => handleLanguageChange('ar')}>{t('ar')}</MenuItem>
+        <MenuItem  sx={{fontFamily: 'Cairo'}} onClick={() => handleLanguageChange('en')}>{t('en')}</MenuItem>
+        <MenuItem  sx={{fontFamily: 'Cairo'}} onClick={() => handleLanguageChange('ar')}>{t('ar')}</MenuItem>
       </Menu>
     </div>
   );
-}
-export default withDispatch (withLocalize(LanguageMenu))
+};
+
+export default withDispatch(withLocalize(LanguageMenu));

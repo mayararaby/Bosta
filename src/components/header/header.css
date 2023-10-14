@@ -31,27 +31,12 @@
 }
 
 label:hover,
-.borderShadow,
-.css-1e6y48t-MuiButtonBase-root-MuiButton-root:hover{
-  border: 1px solid #0000001a !important;
-  border-bottom-color: transparent !important;
-  border-radius: 10px !important;
-  border-bottom-left-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
-  background-color: transparent !important;
-}
-
-.css-1e6y48t-MuiButtonBase-root-MuiButton-root{
-  padding: 15px 28px !important;
-  font-weight: bold !important;
-  border: 1px solid transparent !important;
-  color: #e30613 !important;
-  font-family: 'Cairo', sans-serif !important;
-  
-}
-.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root,
-.css-1hv8oq8-MuiStepLabel-label.MuiStepLabel-alternativeLabel,
-table{
-  font-family: 'Cairo', sans-serif !important;
-
+.borderShadow
+{
+  border: 1px solid #0000001a ;
+  border-bottom-color: transparent ;
+  border-radius: 10px ;
+  border-bottom-left-radius: 0 ;
+  border-bottom-right-radius: 0 ;
+  background-color: transparent ;
 }

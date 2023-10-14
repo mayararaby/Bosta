@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 
 const TrackingSearch = ({ t }) => {
   const [trackingNumber, setTrackingNumber] = useState("")
-  console.log({trackingNumber})
   const handelTrackingNumber = (e) => (setTrackingNumber(e.target.value.trim()))
   const selectedLanguage = useSelector(state => state.local)
 

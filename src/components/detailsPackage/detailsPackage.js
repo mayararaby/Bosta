@@ -13,8 +13,6 @@ import { styled } from '@mui/material/styles';
 import { columns } from '../../constants';
 import { useSelector } from 'react-redux';
 
-
-
 const DetailsPackage = ({ TransitEvents, t }) => {
 
   const createData = (branch, date, time, details) => {
@@ -46,16 +44,16 @@ const DetailsPackage = ({ TransitEvents, t }) => {
   return (
     <div className="detailsPackageContainer">
       <div className='packageInfoTitle'>
-    {t('packageDetails')}
+        {t('packageDetails')}
       </div>
       <div className='tableContainer'>
         <Paper>
           <TableContainer>
             <Table stickyHeader aria-label="sticky table">
-              <TableHead sx={{ backgroundColor: '#e30613' }}>
+              <TableHead sx={{ backgroundColor: '#f4f2f2' }}>
                 <TableRow>
                   {columns.map((column) => (
-                    <StyledTableCell key={column.id} align={`${selectedLanguage ==='ar'?column.align:'left'}`}>
+                    <StyledTableCell key={column.id} align={`${selectedLanguage === 'ar' ? column.align : 'left'}`} sx={{ fontWeight: 'bold', color: '#9e9c9c' , backgroundColor: '#f4f2f2'}}>
                       {t(column.label)}
                     </StyledTableCell>
                   ))}
@@ -68,7 +66,7 @@ const DetailsPackage = ({ TransitEvents, t }) => {
                       {columns.map((column) => {
                         const value = row[column.id];
                         return (
-                          <StyledTableCell key={column.id} align={`${selectedLanguage ==='ar'?column.align:'left'}`}>
+                          <StyledTableCell key={column.id} align={`${selectedLanguage === 'ar' ? column.align : 'left'}`}>
                             {column.id === 'details' ? (
                               <span className='detailsTable'>
                                 {value.split(',').map((statement, index) => (

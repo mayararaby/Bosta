@@ -14,7 +14,7 @@ export const SnackbarCustom=(props)=> {
 
   return (
     <Snackbar open={props.open} autoHideDuration={6000} onClose={handleClose}>
-      <Alert onClose={handleClose} severity={props.statue}>
+      <Alert sx={{fontFamily: 'Cairo'}} onClose={handleClose} severity={props.statue}>
         {props.message}
       </Alert>
     </Snackbar>
